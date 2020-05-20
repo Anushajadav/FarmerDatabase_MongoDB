@@ -1,0 +1,40 @@
+<h3><a class="btn btn-secondary" href="/farmer"><i class="fa fa-plus"></i> Create New</a> Farmer List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Parent Name</th>
+            <th>Product Name</th>
+            <th>Amount</th>
+            <th>Interest</th>
+            <th>Remaining Amount</th>
+            <th>Date Of Purchased</th>
+            <th>Date Of Return</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Region</th>
+             
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}{{!we hv returned docs in list object}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.parentName}}</td>
+            <td>{{this.productName}}</td>
+            <td>{{this.amount}}</td>
+            <td>{{this.interest}}</td>
+            <td>{{this.remainingAmount}}</td>
+            <td>{{this.dop}}</td>
+            <td>{{this.dor}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.region}}</td>
+            <td>
+                <a href="/farmer/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>{{!wehv added pencil icon using boostrap}}
+                <a href="/farmer/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

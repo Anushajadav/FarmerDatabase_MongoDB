@@ -1,0 +1,95 @@
+<h3>{{viewTitle}}</h3>
+{{!this is to insert and update}}
+<form action="/farmer" method="POST" autocomplete="off">{{!to handle post u hv to pass uri for action set method post}}
+    <input type="hidden" name="_id" value="{{farmer._id}}">
+    <div class="form-group">{{!this is from bootstrap,form-control and form-group}}
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="fullName" placeholder="Full Name" value="{{farmer.fullName}}">{{!when we submit the form ,value will be returned in the full name property}}
+        <div class="text-danger">
+            {{farmer.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Parent Name</label>
+        <input type="text" class="form-control" name="parentName" placeholder="Parent Name" value="{{farmer.parentName}}">
+         <div class="text-danger">
+            {{farmer.parentNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" class="form-control" name="productName" placeholder="Product Name" value="{{farmer.productName}}">
+        <div class="text-danger">
+            {{farmer.productNameError}}
+        </div>
+    </div>
+    <div class="form-row">{{!wewnt show in a single line so we hv used form-row}}
+        <div class="form-group col-md-6">
+           <label>Amount</label>
+           <input type="text" class="form-control" name="amount" placeholder="$" value="{{farmer.amount}}">
+           <div class="text-danger">
+            {{farmer.amountError}}
+        </div> 
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Interest</label>
+           <input type="text" class="form-control" name="interest" placeholder="%" value="{{farmer.interest}}">
+          <div class="text-danger">
+            {{farmer.interestError}}
+        </div> 
+        </div>
+         <div class="form-group col-md-6">
+           <label>Remaining Amount</label>
+           <input type="text" class="form-control" name="remainingAmount" placeholder="$" value="{{farmer.remainingAmount}}">
+           <div class="text-danger">
+            {{farmer.remainingAmountError}}
+        </div>
+        </div>
+         
+    </div>
+     
+    <div class="form-row">{{!wewnt show in a single line so we hv used form-row}}
+        <div class="form-group col-md-6">
+            <label>Date Of Purchased</label>
+            <input type="text" class="form-control" name="dop" placeholder="mm/dd/yyyy" value="{{farmer.dop}}">
+             <div class="text-danger">
+            {{farmer.dopError}}
+        </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Date Of Return</label>
+            <input type="text" class="form-control" name="dor" placeholder="mm/dd/yyyy" value="{{farmer.dor}}">
+            <div class="text-danger">
+            {{farmer.dorError}}
+        </div>
+        </div>
+    </div>
+     
+     <div class="form-group">
+        <label>Mobile</label>
+        <input type="text" class="form-control" name="mobile" placeholder="Mobile" value="{{farmer.mobile}}">
+        <div class="text-danger">
+            {{farmer.productNameError}}
+        </div>
+    </div>
+
+    <div class="form-row">{{!wewnt show in a single line so we hv used form-row}}
+        <div class="form-group col-md-6">
+            <label>City</label>
+            <input type="text" class="form-control" name="city" placeholder="City" value="{{farmer.city}}">
+             <div class="text-danger">
+            {{farmer.cityError}}
+        </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Region</label>
+            <input type="text" class="form-control" name="region" placeholder="Region" value="{{farmer.region}}">
+            
+        </div>
+         
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>{{!we hv used bootstrap for icon}}
+        <a class="btn btn-secondary" href="/farmer/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>

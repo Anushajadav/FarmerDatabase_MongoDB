@@ -2,8 +2,8 @@
 require('./models/db');
 
 const express = require('express');
-//request statement for employee controller
-const employeeController = require('./controllers/employeeController');
+//request statement for farmer controller
+const employeeController = require('./controllers/farmerController');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
@@ -21,5 +21,5 @@ app.set('view engine', 'hbs');
 app.listen(3000, () => {
     console.log('Express server started at port : 3000');
 });
-//here we are config routing for this employee controller and url is /employee
-app.use('/employee', employeeController);//use midddleware
+//here we are config routing for this farmer controller and url is /farmer
+app.use('/farmer', employeeController);//use midddleware
