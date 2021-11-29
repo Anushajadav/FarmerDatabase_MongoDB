@@ -52,7 +52,7 @@ var farmerSchema = new mongoose.Schema({
     }
 });
 
-//email format checking
+ 
 farmerSchema.path('mobile').validate((val) => { 
     mobileRegex =   /^[789]\d{9}$/;
     return mobileRegex.test(val);

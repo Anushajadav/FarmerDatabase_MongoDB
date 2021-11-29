@@ -39,7 +39,7 @@
         </div>
          <div class="form-group col-md-6">
            <label>Remaining Amount</label>
-           <input type="text" class="form-control" name="remainingAmount" placeholder="$" value="{{farmer.remainingAmount}}">
+           <input type="text" class="form-control" name="disabled" placeholder="$" value="{{farmer.remainingAmount}}" >
            <div class="text-danger">
             {{farmer.remainingAmountError}}
         </div>
@@ -90,6 +90,6 @@
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>{{!we hv used bootstrap for icon}}
-        <a class="btn btn-secondary" href="/farmer/list"><i class="fa fa-list-alt"></i> View All</a>
+        <a class="btn btn-secondary" href="/books/getAll"><i class="fa fa-list-alt"></i> View All</a>
     </div>
 </form>

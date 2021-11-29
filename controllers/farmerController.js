@@ -6,6 +6,7 @@ const express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
 const Farmer = mongoose.model('Farmer');//requesting for farmer schema from model
+
 //https://expressjs.com/en/starter/basic-routing.html
 //router is an instance of express
 //router.HTTP(Path-is On the server,hANDLER-HANDLER is the function executed when the route is matched.)
@@ -24,7 +25,7 @@ router.post('/', (req, res) => {//A POST request is used to send data to the ser
 
 function insertRecord(req, res) {//to insert the record in mongodb
     var farmer = new Farmer();//in order insert ,we create obj of farmer schema
-    farmer.fullName = req.body.fullName;
+    farmer.fullName = req.body.fullName;//req.body-has the user suplied data
     farmer.parentName = req.body.parentName;
     farmer.productName = req.body.productName;
     farmer.amount = req.body.amount;
@@ -41,7 +42,7 @@ function insertRecord(req, res) {//to insert the record in mongodb
             if (err.name == 'ValidationError') {//checking is the error is validation
                 handleValidationError(err, req.body);
                 res.render("farmer/addOrEdit", {
-                    viewTitle: 'Update Farmer Details',
+                    viewTitle: 'Insert Farmer Details',
                     farmer: req.body
                 });
             }
@@ -132,7 +133,7 @@ router.get('/:id', (req, res) => {//to return specific employ with respect to id
                 farmer: doc
             });
         }
-    }).lean();;
+    }).lean();
 });
  
 router.get('/delete/:id', (req, res) => {
